@@ -36,10 +36,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private int antall;            // antall noder i listen
     private int endringer;         // antall endringer i listen
 
-    public DobbeltLenketListe() {
-        throw new UnsupportedOperationException();
-    }
-
     public DobbeltLenketListe(T[] a) {
         throw new UnsupportedOperationException();
     }
@@ -50,12 +46,17 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int antall() {
-        throw new UnsupportedOperationException();
+        return antall;
     }
 
     @Override
     public boolean tom() {
-        throw new UnsupportedOperationException();
+        if(hode == null){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
@@ -157,6 +158,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
+//    public static void main(String[] args) {
+//        Liste<String> liste = new DobbeltLenketListe<>();
+//        System.out.println(liste.antall() + " " + liste.tom());
+//    }
 } // class DobbeltLenketListe
 
 
