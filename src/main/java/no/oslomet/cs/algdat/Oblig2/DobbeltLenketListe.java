@@ -6,6 +6,7 @@ package no.oslomet.cs.algdat.Oblig2;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Objects;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -36,8 +37,29 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private int antall;            // antall noder i listen
     private int endringer;         // antall endringer i listen
 
+    public DobbeltLenketListe(){    // Tom liste konstruktør
+        hode = hale = null;
+        antall = 0;
+        endringer = 0;
+    }
+
     public DobbeltLenketListe(T[] a) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(a, "Tabellen a er null!");
+
+        for(T i : a){
+            if (i != null){
+                if (antall == 0){
+                    hode = new Node<>(i, null, null);
+                    hale = hode;
+                }
+                else {
+                    hale.neste = new Node<>(i, hale, null);
+                    hale = hale.neste;
+                }
+                antall++;
+            }
+        }
+
     }
 
     public Liste<T> subliste(int fra, int til) {
@@ -158,10 +180,11 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         throw new UnsupportedOperationException();
     }
 
-//    public static void main(String[] args) {
-//        Liste<String> liste = new DobbeltLenketListe<>();
-//        System.out.println(liste.antall() + " " + liste.tom());
-//    }
+    public static void main(String[] args) {
+        String[] s = {"Ole", null, "Per", "Kari", null};
+        Liste<String> liste = new DobbeltLenketListe<>(s);
+        System.out.println(liste.antall() + " " + liste.tom());
+    }
 } // class DobbeltLenketListe
 
 
