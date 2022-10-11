@@ -73,12 +73,11 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean tom() {
-        if(hode == null){
-            return true;
+        boolean tom = false;
+            if(antall() == 0) {
+            tom = true;
         }
-        else{
-            return false;
-        }
+            return tom;
     }
 
     @Override
@@ -128,11 +127,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException();
+        // StringBuilder
+        // Loop som sjekker listen og returnerer strengen/sb. Hode til hale.
     }
 
     public String omvendtString() {
-        throw new UnsupportedOperationException();
+        // StringBuilder
+        // Samme som toString(), men omvendt. Hale til hode.
     }
 
     @Override

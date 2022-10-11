@@ -2,15 +2,15 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende studenter:
+
 * Duc Tan Vo, S364733, s364733@oslomet.no
-
-# Arbeidsfordeling
-
-I oppgaven har vi hatt følgende arbeidsfordeling:
-* Duc har hatt hovedansvar for alle oppgavene.
 
 # Oppgavebeskrivelse
 
-I oppgave 1 så gikk vi frem ved å ...
+Oppgave 1: Metodene int antall() returnerer variabele, 
+og boolean tom() har en hjelpevariabel og sjekker om antall() er tom eller ikke. Returnerer tom.
 
-I oppgave 2 så brukte vi en ... til å ...
+Oppgave 2: 
+
+
+
