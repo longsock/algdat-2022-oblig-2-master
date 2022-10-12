@@ -144,7 +144,18 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public void leggInn(int indeks, T verdi) {
-        throw new UnsupportedOperationException();
+        // requireNonNull for sjekk av null-verdier
+        // Sjekk om indeks er negativ, eller større enn antall og kaster unntak
+
+        // Node som kan brukes
+
+        // 1) Hvis listen er tom, er node hodet og hale
+        // 2) Hvis verdien skal legges først, bruk node, ny node peker til hode, gjør ny node til hode.
+        // 3) Hvis verdien skal legges bakerst, node blir ny hale, forrige hale peker på ny node, gjør ny node til hale.
+        // 4) Hvis verdien skal legges mellom to verdier, bruk metode finnNode, sett riktig pekere
+
+        // Antall og endringer oppdateres.
+
     }
 
     @Override
