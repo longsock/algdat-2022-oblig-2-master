@@ -87,13 +87,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         Node p = new Node<>(verdi, null, null);
 
-        if(hale == null & hode == null){    // Hvis listen er tom
+        if(hale == null & hode == null){
             p.forrige = null;
             hode = p;
             hale = p;
             antall++;
             endringer++;
-        } else {    // Hvis listen ikke er tom
+        } else {
             hale.neste = p;
             p.forrige = hale;
             hale = p;
