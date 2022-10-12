@@ -23,9 +23,15 @@ Hvis listen ikke er tom legges noden bak.
 
 Oppgave 3:
 
+a. Lagd en hjelpemetode finnNode som tar inn int indeks som parameter. Sjekker om indeks <= antall/2 også teller den fra hodet til riktig indeks.
+Hvis motsatt starter den fra hale og teller nedover og gjør det samme.
+Metoden public T hent bruker metoden finnNode og returnerer verdien.
+finnNode blir også brukt i T oppdater som lagrer verdi i en midlertidig node, også oppdateres verdien, så returneres den.
+
+b. Hentet fratilKontroll fra kompendiet. Lager en liste og bruker metoden finnNode. For-loop som teller fra indeks fra til indeks til, og legger disse i listen og returnerer denne.
+
+Oppgave 4:
+
 a.
 
 b.
-
-
-

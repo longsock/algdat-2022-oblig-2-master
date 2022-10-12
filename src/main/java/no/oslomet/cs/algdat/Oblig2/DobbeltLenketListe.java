@@ -160,7 +160,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int indeksTil(T verdi) {
-        throw new UnsupportedOperationException();
+        // Node som hode
+        // For-loop som itererer gjennom, hvis verdien er som noden, returner indeks til verdi
+        // Else, returner -1 og ikke kastes unntak
     }
 
     @Override
