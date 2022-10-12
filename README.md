@@ -54,3 +54,16 @@ boolean fjern itererer gjennom listen til riktig verdi blir funnet. Hvis den ikk
 
 Oppgave 8:
 
+a. Sjekker først om at det har blitt gjort endringer i listen før metoden kjøres. Hvis ja kastes det en ConcurrentModificationException med feilmelding.
+Bruker hasNext()-metoden for å sjekke om det er flere igjen i listen, hvis er false, kastes det en NoSuchElementException med passende feilmelding.
+Setter deretter fjernOK = true, og da kan vi bruker remove();
+Temp lagring av verdi, setter denne til å peke på neste node. Returnerer lagret verdi.
+
+b.
+
+c.
+
+d.
+
+
+
