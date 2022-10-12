@@ -340,7 +340,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         @Override
         public T next() {
-            throw new UnsupportedOperationException();
+            // Sjekk av iteratorendringer = endringer, hvis ikke kast unntak, også NoSuchElementException.
+            // Sjekk resten av listen
+            // Hvis fjernOK = true, returner verdien til denne og flytt denne til neste node.
         }
 
         @Override
