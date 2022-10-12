@@ -83,7 +83,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException();
+        // requireNonNull-metode for å ikke tillate null-verdier
+
+        //Ny node
+
+        //Kode hvor noden legges inn bakerst i listen, og returnere true
+        // If/hvis listen er tom, else hvis listen ikke er tom.
     }
 
     @Override
