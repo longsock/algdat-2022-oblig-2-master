@@ -59,11 +59,11 @@ Bruker hasNext()-metoden for å sjekke om det er flere igjen i listen, hvis er f
 Setter deretter fjernOK = true, og da kan vi bruker remove();
 Temp lagring av verdi, setter denne til å peke på neste node. Returnerer lagret verdi.
 
-b.
+b. Returnerte bare iteratorklassen i seg selv.
 
-c.
+c. Brukte denne = finnNode(indeks) slik at den starterp å oppgitt indeks. Resten av kode er hentet fra ferdigkodet konstruktør.
 
-d.
+d. Sjekker om at indeks er lovlig med indeksKontroll-metoden også returnerer den seg selv.
 
 
 

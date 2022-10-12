@@ -308,12 +308,12 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public Iterator<T> iterator() {
-        throw new UnsupportedOperationException();
+        return new DobbeltLenketListeIterator();
     }
 
     public Iterator<T> iterator(int indeks) {
-        // Sjekk om indeks er lovlig. Bruk indeksKontroll?
-        // Returner en instans av iteratorklassen.
+        indeksKontroll(indeks, false);
+        return new DobbeltLenketListeIterator(indeks);
     }
 
     private class DobbeltLenketListeIterator implements Iterator<T> {
@@ -328,8 +328,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
 
         private DobbeltLenketListeIterator(int indeks) {
-            // Denne skal peke på oppgitt indeks. finnNode(indeks).
-            // Resten skal kopieres fra ferdigkodet konstruktør.
+            denne = finnNode(indeks); // denne starter på oppgitt indeks
+            fjernOK = false;  // blir sann når next() kalles
+            iteratorendringer = endringer;  // teller endringer
         }
 
         @Override
@@ -363,12 +364,11 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     public static void main(String[] args) {
-        Character[] c = {'A','B','C','D','E','F','G','H','I','J',};
-        DobbeltLenketListe<Character> liste = new DobbeltLenketListe<>(c);
-        System.out.println(liste.subliste(3,8)); // [D, E, F, G, H]
-        System.out.println(liste.subliste(5,5)); // []
-        System.out.println(liste.subliste(8,liste.antall())); // [I, J]
-        // System.out.println(liste.subliste(0,11)); // skal kaste unntak
+        String[] navn = {"Lars","Anders","Bodil","Kari","Per","Berit"};
+        Liste<String> liste = new DobbeltLenketListe<>(navn);
+        liste.forEach(s -> System.out.print(s + " "));
+        System.out.println();
+        for (String s : liste) System.out.print(s + " ");
     }
 
 } // class DobbeltLenketListe
