@@ -34,3 +34,11 @@ Oppgave 4:
 
 Lagd metode indeksTil som starter i hodet og hopper gjennom listen. Hvis hodets verdi er samme som verdi returneres indeks. Hvis det ikke finnes returner det -1 istedenfor å kaste en unntak.
 Metoden boolean inneholder(T verdi) sjekker om indeks ==-1 og returnerer false, hvis ikke returnerer den true.
+
+Oppgave 5:
+
+requireNonNull metode slik at null-verdier ikke tillates. Sjekker om indeks < 0 eller negativ og kaster unntak hvis det stemmer.
+Hvis listen er tom setter jeg den nyee noden til hode og hale. Hvis verdien skal legges til venstre setter jeg ny node til hode, og setter riktig pekere.
+Hvis verdi skal legges bakerst sjekker vi om indeks == antall, hvis det er det setter vi ny node til hale og setter riktig pekere.
+Hvis verdi skal settes inn i midten bruker vi finnNode metoden og setter riktig pekere.
+Antall og endringer endres.

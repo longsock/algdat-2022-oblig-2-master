@@ -145,18 +145,33 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public void leggInn(int indeks, T verdi) {
         // requireNonNull for sjekk av null-verdier
+        Objects.requireNonNull(verdi, "Null-verdier er ikke tillatt!");
+        Node<T> nyNode = new Node<>(verdi, null, null);
+
         // Sjekk om indeks er negativ, eller større enn antall og kaster unntak
-
-        // Node som kan brukes
-
-        // 1) Hvis listen er tom, er node hodet og hale
-        // 2) Hvis verdien skal legges først, bruk node, ny node peker til hode, gjør ny node til hode.
-        // 3) Hvis verdien skal legges bakerst, node blir ny hale, forrige hale peker på ny node, gjør ny node til hale.
-        // 4) Hvis verdien skal legges mellom to verdier, bruk metode finnNode, sett riktig pekere
-
-        // Antall og endringer oppdateres.
-
-    }
+        if(indeks > antall || indeks < 0){
+            throw new NullPointerException("Indeks er større enn antall noder eller negativ!");
+        } else if (hode == null && hale == null){   // 1) Hvis listen er tom, er node hodet og hale
+            hode = nyNode;
+            hale = nyNode;
+        } else if (indeks == 0) {// 2) Hvis verdien skal legges først, bruk node, ny node peker til hode, gjør ny node til hode.
+            nyNode.neste = hode;
+            hode.forrige = nyNode;
+            hode = nyNode;
+        } else if (indeks == antall){   // 3) Hvis verdien skal legges bakerst, node blir ny hale, forrige hale peker på ny node, gjør ny node til hale.
+            nyNode.forrige = hale;
+            hale.neste = nyNode;
+            hale = nyNode;
+        } else {    // 4) Hvis verdien skal legges mellom to verdier, bruk metode finnNode, sett riktig pekere
+            Node<T> p = finnNode(indeks-1);
+            nyNode.neste = p.neste;
+            nyNode.forrige = p;
+            p.neste = nyNode;
+            nyNode.neste.forrige = nyNode;
+            }
+        antall++;
+        endringer++;
+        }
 
     @Override
     public boolean inneholder(T verdi) {
