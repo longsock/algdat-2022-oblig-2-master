@@ -124,7 +124,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T hent(int indeks) {
-        throw new UnsupportedOperationException();
+        //Bruk indeksKontroll fra Liste og false som parameter
+        //Returnerer verdi
     }
 
     @Override
@@ -134,7 +135,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T oppdater(int indeks, T nyverdi) {
-        throw new UnsupportedOperationException();
+        // indeksKontroll og false som parameter,
+        // requireNonNull sjekk for ingen null-verdier
+        // Erstatte verdi på plass indeks og returnere
+        // Endringer økes
     }
 
     @Override
