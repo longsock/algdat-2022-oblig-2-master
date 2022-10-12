@@ -215,12 +215,19 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException();
+        // Sjekk om verdi er null, return false.
     }
 
     @Override
     public T fjern(int indeks) {
-        throw new UnsupportedOperationException();
+        // Bruk indeksKontroll for å sjekke indeks eller kast unntak
+        // Sjekk hvis antall == 1, sett hode og hale til null
+        // Hvis indeks == 0; setter vi node til neste, og fjerner forrige peker.
+        // Hvis indeks == antall-1 flytter vi halen og fjerner peker
+        // Hvis en node i midten skal fjernes bruker vi finnNode() og setter riktig pekere.
+
+        // Oppdaterer antall og endringer
+        // Returnere verdi
     }
 
     @Override
