@@ -7,6 +7,7 @@ package no.oslomet.cs.algdat.Oblig2;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -127,13 +128,25 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public String toString() {
-        // StringBuilder
-        // Loop som sjekker listen og returnerer strengen/sb. Hode til hale.
+        StringJoiner sj = new StringJoiner(", ", "[", "]");
+        Node<T> current = hode;
+
+        while(current != null){
+            sj.add(current.verdi.toString());
+            current = current.neste;
+        }
+        return sj.toString();
     }
 
     public String omvendtString() {
-        // StringBuilder
-        // Samme som toString(), men omvendt. Hale til hode.
+        StringJoiner sj = new StringJoiner(", ", "[", "]");
+        Node<T> current = hale;
+
+        while(current != null){
+            sj.add(current.verdi.toString());
+            current = current.forrige;
+        }
+        return sj.toString();
     }
 
     @Override
@@ -185,6 +198,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         String[] s = {"Ole", null, "Per", "Kari", null};
         Liste<String> liste = new DobbeltLenketListe<>(s);
         System.out.println(liste.antall() + " " + liste.tom());
+
+        String[] s1 = {}, s2 = {"A"}, s3 = {null,"A",null,"B",null};
+        DobbeltLenketListe<String> l1 = new DobbeltLenketListe<>(s1);
+        DobbeltLenketListe<String> l2 = new DobbeltLenketListe<>(s2);
+        DobbeltLenketListe<String> l3 = new DobbeltLenketListe<>(s3);
+        System.out.println(l1.toString() + " " + l2.toString()
+                + " " + l3.toString() + " " + l1.omvendtString() + " "
+                + l2.omvendtString() + " " + l3.omvendtString());
     }
 } // class DobbeltLenketListe
 

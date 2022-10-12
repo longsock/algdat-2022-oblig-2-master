@@ -7,10 +7,13 @@ Oppgaven er levert av følgende studenter:
 
 # Oppgavebeskrivelse
 
-Oppgave 1: Metodene int antall() returnerer variabele, 
+Oppgave 1: Metodene int antall() returnerer variabelen, 
 og boolean tom() har en hjelpevariabel og sjekker om antall() er tom eller ikke. Returnerer tom.
+I konstruktøren setter den hodet først, også itererer den gjennom listen og lager resten av listen. 
 
-Oppgave 2: 
+Oppgave 2a: I toString() metoden satte jeg delimiter, prefix, og suffix, også legger den til verdien i listen. Itererer gjennom med current.neste.
+Planla å lage med StringBuilder først, men innså at StringJoiner i både toString og omvendtString for mindre kode.
+
 
 
 
