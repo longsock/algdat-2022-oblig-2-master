@@ -42,3 +42,15 @@ Hvis listen er tom setter jeg den nyee noden til hode og hale. Hvis verdien skal
 Hvis verdi skal legges bakerst sjekker vi om indeks == antall, hvis det er det setter vi ny node til hale og setter riktig pekere.
 Hvis verdi skal settes inn i midten bruker vi finnNode metoden og setter riktig pekere.
 Antall og endringer oppdateres.
+
+Oppgave 6:
+
+Lagde først T fjern(). Sjekker først om indeksene er gyldige, hvis indeks er negativ eller størren listen kastes det unntak.
+Metoden sjekker først om antall = 1, hvis den er det fjerner den første node og setter hode = hale = null. Hvis indeks = 0, flytter vi hodet med hode.neste og fjerner forrige peker. 
+Hvis indeks = antall-1 flytter vi halen med hale.forrige.neste og setter til null, og hale = hale.forrige.
+Hvis vi skal fjerne noe mellom bruker vi først finnNode, også setter vi riktig pekere slik at hjelpenoden fjernes.
+Antall og endringer oppdateres. Det returneres alltid verdiens posisjon.
+boolean fjern itererer gjennom listen til riktig verdi blir funnet. Hvis den ikke finner riktig verdi returneres det en false. Går gjennom samme som i fjern T metoden.
+
+Oppgave 8:
+

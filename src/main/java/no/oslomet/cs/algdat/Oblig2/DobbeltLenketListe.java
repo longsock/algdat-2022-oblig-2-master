@@ -215,19 +215,70 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean fjern(T verdi) {
-        // Sjekk om verdi er null, return false.
+        if(verdi == null) {
+            return false;
+        }
+        Node<T> current = hode;
+
+        int i = 1;
+        while(!current.verdi.equals(verdi) && i < antall) {
+            current = current.neste;
+            i++;
+        }
+        if(i == antall && !current.verdi.equals(verdi)) {
+            return false;
+        }
+        if(antall == 1){
+            hode = null;
+            hale = null;
+        }else if(current.forrige == null) {
+            hode.neste.forrige = null;
+            hode = hode.neste;
+        }else if(current.neste == null) {
+            hale.forrige.neste = null;
+            hale = hale.forrige;
+        }else {
+            current.forrige.neste = current.neste;
+            current.neste.forrige = current.forrige;
+        }
+        antall--;
+        endringer++;
+        return true;
     }
 
     @Override
     public T fjern(int indeks) {
-        // Bruk indeksKontroll for å sjekke indeks eller kast unntak
-        // Sjekk hvis antall == 1, sett hode og hale til null
-        // Hvis indeks == 0; setter vi node til neste, og fjerner forrige peker.
-        // Hvis indeks == antall-1 flytter vi halen og fjerner peker
-        // Hvis en node i midten skal fjernes bruker vi finnNode() og setter riktig pekere.
+        Node<T> current = hode;
 
-        // Oppdaterer antall og endringer
-        // Returnere verdi
+        if(indeks < 0) {
+            throw new IndexOutOfBoundsException("Indeksen kan ikke være negativ!");
+        }
+        if(indeks >= antall) {
+            throw new IndexOutOfBoundsException("Indeksen kan ikke være større enn antall noder!");
+        }
+
+        T retur;
+
+        if(antall == 1) {
+            retur = hode.verdi;
+            hode = hale = null;
+        } else if (indeks == 0){
+            retur = hode.verdi;
+            hode = hode.neste;
+            hode.forrige = null;
+        } else if (indeks == antall-1){
+            retur = hale.verdi;
+            hale.forrige.neste = null;
+            hale = hale.forrige;
+        } else {
+            current = finnNode(indeks);
+            retur = current.verdi;
+            current.forrige.neste = current.neste;
+            current.neste.forrige = current.forrige;
+        }
+        antall--;
+        endringer++;
+        return retur;
     }
 
     @Override
