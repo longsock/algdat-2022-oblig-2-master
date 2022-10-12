@@ -32,6 +32,5 @@ b. Hentet fratilKontroll fra kompendiet. Lager en liste og bruker metoden finnNo
 
 Oppgave 4:
 
-a.
-
-b.
+Lagd metode indeksTil som starter i hodet og hopper gjennom listen. Hvis hodets verdi er samme som verdi returneres indeks. Hvis det ikke finnes returner det -1 istedenfor å kaste en unntak.
+Metoden boolean inneholder(T verdi) sjekker om indeks ==-1 og returnerer false, hvis ikke returnerer den true.
